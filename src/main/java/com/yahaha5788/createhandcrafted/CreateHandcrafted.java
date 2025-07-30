@@ -1,6 +1,7 @@
 package com.yahaha5788.createhandcrafted;
 
 import com.mojang.logging.LogUtils;
+import com.yahaha5788.createhandcrafted.content.CHBlocks;
 import com.yahaha5788.createhandcrafted.content.CHCreativeTabs;
 import com.yahaha5788.createhandcrafted.content.CHItems;
 import net.minecraft.client.Minecraft;
@@ -41,6 +42,7 @@ public class CreateHandcrafted
         CHCreativeTabs.register(modEventBus);
         REGISTRATE.registerEventListeners(modEventBus);
         CHItems.register();
+        CHBlocks.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

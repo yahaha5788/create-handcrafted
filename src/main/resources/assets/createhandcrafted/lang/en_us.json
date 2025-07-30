@@ -1,5 +1,7 @@
 {
   "item.createhandcrafted.gilded_alloy": "Gilded Alloy",
+  "block.createhandcrafted.gilded_obsidian": "Gilded Obsidian",
+
   "creativetabs.main": "Create: Handcrafted",
   "creativetabs.deco": "Create: Handcrafted Decor"
 }
