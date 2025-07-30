@@ -1,10 +1,9 @@
 package com.yahaha5788.createhandcrafted;
 
 import com.mojang.logging.LogUtils;
-import com.yahaha5788.createhandcrafted.item.ModCreativeModeTabs;
-import com.yahaha5788.createhandcrafted.item.ModItems;
+import com.yahaha5788.createhandcrafted.content.CHCreativeTabs;
+import com.yahaha5788.createhandcrafted.content.CHItems;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -17,11 +16,18 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+import com.simibubi.create.foundation.data.CreateRegistrate;
+
+
 @Mod(CreateHandcrafted.MODID)
 public class CreateHandcrafted
 {
     public static final String MODID = "createhandcrafted";
+
     private static final Logger LOGGER = LogUtils.getLogger();
+
+    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(CreateHandcrafted.MODID);
+
 
     public CreateHandcrafted(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
@@ -32,8 +38,9 @@ public class CreateHandcrafted
 
         modEventBus.addListener(this::addCreative);
 
-        ModItems.register(modEventBus);
-        ModCreativeModeTabs.register(modEventBus);
+        CHCreativeTabs.register(modEventBus);
+        REGISTRATE.registerEventListeners(modEventBus);
+        CHItems.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
