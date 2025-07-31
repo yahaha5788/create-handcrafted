@@ -28,6 +28,10 @@ public class CHItems {
             CreateHandcrafted.REGISTRATE.item("copper_sawblade", Item::new)
                     .register();
 
+    public static final ItemEntry<Item> IRON_SAWBLADE =
+            CreateHandcrafted.REGISTRATE.item("iron_sawblade", Item::new)
+                    .register();
+
     public static final ItemEntry<Item> BRASS_SAWBLADE =
             CreateHandcrafted.REGISTRATE.item("brass_sawblade", Item::new)
                     .register();
@@ -37,15 +41,19 @@ public class CHItems {
                     .register();
 
     public static final ItemEntry<Item> COPPER_DRILL =
-            CreateHandcrafted.REGISTRATE.item("copper_drill", Item::new)
+            CreateHandcrafted.REGISTRATE.item("copper_drillhead", Item::new)
+                    .register();
+
+    public static final ItemEntry<Item> IRON_DRILL =
+            CreateHandcrafted.REGISTRATE.item("iron_drillhead", Item::new)
                     .register();
 
     public static final ItemEntry<Item> BRASS_DRILL =
-            CreateHandcrafted.REGISTRATE.item("brass_drill", Item::new)
+            CreateHandcrafted.REGISTRATE.item("brass_drillhead", Item::new)
                     .register();
 
     public static final ItemEntry<Item> GILDED_DRILL =
-            CreateHandcrafted.REGISTRATE.item("gilded_drill", Item::new)
+            CreateHandcrafted.REGISTRATE.item("gilded_drillhead", Item::new)
                     .register();
 
     public static void register() {
