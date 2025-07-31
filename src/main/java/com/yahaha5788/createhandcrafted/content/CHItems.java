@@ -13,8 +13,20 @@ public class CHItems {
     }
 
     public static final ItemEntry<Item> GILDED_ALLOY =
-        CreateHandcrafted.REGISTRATE.item("gilded_alloy", Item::new)
-        .register();
+            CreateHandcrafted.REGISTRATE.item("gilded_alloy", Item::new)
+                    .register();
+
+    public static final ItemEntry<Item> COPPER_WHISK =
+            CreateHandcrafted.REGISTRATE.item("copper_whisk", Item::new)
+                    .register();
+
+    public static final ItemEntry<Item> BRASS_WHISK =
+            CreateHandcrafted.REGISTRATE.item("brass_whisk", Item::new)
+                    .register();
+
+    public static final ItemEntry<Item> GILDED_WHISK =
+            CreateHandcrafted.REGISTRATE.item("gilded_whisk", Item::new)
+                    .register();
 
     public static void register() {
 

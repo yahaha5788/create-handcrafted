@@ -28,17 +28,17 @@ public class CHCreativeTabs {
     public static final RegistryObject<CreativeModeTab> CH_MAIN_TAB = CREATIVE_TAB_REGISTER.register("main",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("creativetabs.main"))
-                    .icon(CHItems.GILDED_ALLOY::asStack)
+                    .icon(CHBlocks.GILDED_OBSIDIAN::asStack)
                     .displayItems(new MainDisplayItemsGen())
                     .build());
-    /*
+
     public static final RegistryObject<CreativeModeTab> CH_DECO_TAB = CREATIVE_TAB_REGISTER.register("deco", // deco soon, trust
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("creativetabs.deco"))
-                    //.icon()
-                    //.displayItems()
+                    .icon(CHBlocks.GOLD_CASING::asStack)
+                    .displayItems(new DecoDisplayItemsGen())
                     .build());
-    */
+
 
     public static void register(IEventBus modEventBus) {
         CREATIVE_TAB_REGISTER.register(modEventBus);
@@ -58,6 +58,7 @@ public class CHCreativeTabs {
                     items.add(item);
             }
             items = new ReferenceArrayList<>(new ReferenceLinkedOpenHashSet<>(items));
+            System.out.println("collected" + items);
             return items;
         }
 
@@ -73,6 +74,7 @@ public class CHCreativeTabs {
                 if (!exclusionPredicate.test(item))
                     items.add(item);
             }
+            System.out.println("collected" + items);
             return items;
         }
 
@@ -91,7 +93,7 @@ public class CHCreativeTabs {
             outputAll(output, items);
         }
     }
-    /*
+
     public static class DecoDisplayItemsGen implements CreativeModeTab.DisplayItemsGenerator {
 
         private List<Item> collectBlocks(RegistryObject<CreativeModeTab> tab, Predicate<Item> exclusionPredicate) {
@@ -139,5 +141,4 @@ public class CHCreativeTabs {
             outputAll(output, items);
         }
     }
-    */
 }

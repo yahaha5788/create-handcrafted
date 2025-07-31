@@ -5,6 +5,7 @@ import com.yahaha5788.createhandcrafted.content.CHBlocks;
 import com.yahaha5788.createhandcrafted.content.CHCreativeTabs;
 import com.yahaha5788.createhandcrafted.content.CHItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -56,6 +58,10 @@ public class CreateHandcrafted
     public void onServerStarting(ServerStartingEvent event)
     {
         LOGGER.info("Handcrafted is starting up common, and doing it inconveniently");
+    }
+
+    public static @NotNull ResourceLocation asResource(String path) {
+        return new ResourceLocation(MODID, path);
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
