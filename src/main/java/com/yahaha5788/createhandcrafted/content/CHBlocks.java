@@ -39,11 +39,15 @@ public class CHBlocks {
             .blockstate(simpleCubeAll("gilded_obsidian"))
             .register();
 
+    public static final BlockEntry<CasingBlock> GILDED_CASING = CreateHandcrafted.REGISTRATE.block("gilded_casing", CasingBlock::new)
+            .properties(p -> p.mapColor(MapColor.GOLD))
+            .transform(BuilderTransformers.casing(() -> CHTextureShifts.GILDED_CASING))
+            .register();
+
 
     static { // decor blocks
         CreateHandcrafted.REGISTRATE.setCreativeTab(CHCreativeTabs.CH_DECO_TAB);
     }
-
 
     public static final BlockEntry<CasingBlock> GOLD_CASING = CreateHandcrafted.REGISTRATE.block("gold_casing", CasingBlock::new)
             .properties(p -> p.mapColor(MapColor.GOLD))
