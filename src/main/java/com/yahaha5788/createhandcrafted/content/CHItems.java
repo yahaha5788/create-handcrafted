@@ -12,10 +12,6 @@ public class CHItems {
         CreateHandcrafted.REGISTRATE.setCreativeTab(CHCreativeTabs.CH_MAIN_TAB);
     }
 
-    public static final ItemEntry<Item> GILDED_ALLOY =
-            CreateHandcrafted.REGISTRATE.item("gilded_alloy", Item::new)
-                    .register();
-
     public static final ItemEntry<Item> COPPER_WHISK =
             CreateHandcrafted.REGISTRATE.item("copper_whisk", Item::new)
                     .register();

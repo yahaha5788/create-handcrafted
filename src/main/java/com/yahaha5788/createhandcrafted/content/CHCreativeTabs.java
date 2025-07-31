@@ -28,7 +28,7 @@ public class CHCreativeTabs {
     public static final RegistryObject<CreativeModeTab> CH_MAIN_TAB = CREATIVE_TAB_REGISTER.register("main",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("creativetabs.main"))
-                    .icon(CHBlocks.GILDED_OBSIDIAN::asStack)
+                    .icon(CHItems.GILDED_WHISK::asStack)
                     .displayItems(new MainDisplayItemsGen())
                     .build());
 
