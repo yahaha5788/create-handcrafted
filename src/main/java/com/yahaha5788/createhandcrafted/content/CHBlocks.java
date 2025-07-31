@@ -24,7 +24,7 @@ import static com.simibubi.create.foundation.data.CreateRegistrate.connectedText
 
 public class CHBlocks {
 
-    static {
+    static { // functional block / main
         CreateHandcrafted.REGISTRATE.setCreativeTab(CHCreativeTabs.CH_MAIN_TAB);
     }
 
@@ -39,23 +39,16 @@ public class CHBlocks {
             .blockstate(simpleCubeAll("gilded_obsidian"))
             .register();
 
-    static {
+
+    static { // decor blocks
         CreateHandcrafted.REGISTRATE.setCreativeTab(CHCreativeTabs.CH_DECO_TAB);
     }
-    public static final BlockEntry<Block> GILDED_CASING = CreateHandcrafted.REGISTRATE.block("gilded_casing", Block::new)
-            .initialProperties(SharedProperties::stone)
-            .properties(p -> p.mapColor(MapColor.TERRACOTTA_BLACK)
-                    .requiresCorrectToolForDrops())
-            .transform(pickaxeOnly())
-            .transform(tagBlockAndItem("obsidians"))
-            .build()
-            .register();
+
 
     public static final BlockEntry<CasingBlock> GOLD_CASING = CreateHandcrafted.REGISTRATE.block("gold_casing", CasingBlock::new)
             .properties(p -> p.mapColor(MapColor.GOLD))
             .transform(BuilderTransformers.casing(() -> CHTextureShifts.GOLD_CASING))
             .register();
-
 
 
     public static void register() {
