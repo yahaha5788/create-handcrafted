@@ -9,41 +9,35 @@ modLoader="javafml" #mandatory
 loaderVersion="${loader_version_range}" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
 
 license="MIT"
-issueTrackerURL="https://github.com/yahaha5788/create-handcrafted/issues"
 
 [[mods]] #mandatory
 
 modId="${mod_id}" #mandatory
 version="${mod_version}" #mandatory
 displayName="${mod_name}" #mandatory
-displayURL="https://github.com/yahaha5788/create-handcrafted"
 
-logoFile="createhandcrafted.png" #optional
 #credits=""
 authors="${mod_authors}" #optional
 
 description='''${mod_description}'''
 
-[[dependencies.createhandcrafted]] #optional
+[[mixins]]
+config = "cfstuff.mixins.json"
+
+[[dependencies.cfstuff]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
     versionRange="${forge_version_range}" #mandatory
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.createhandcrafted]]
+[[dependencies.cfstuff]]
     modId="minecraft"
     mandatory=true
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.createhandcrafted]]
-    modId="create"
-    mandatory=true
-    versionRange="[6.0.6,6.1.0)"
-    ordering="NONE"
-    side="BOTH"
 
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't

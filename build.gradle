@@ -3,6 +3,7 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version "${librarian_version}"
     id 'eclipse'
     id 'maven-publish'
+    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = "${minecraft_version}-${mod_version}"
@@ -81,8 +82,6 @@ minecraft {
             }
 
             client {
-                property("mixin.env.remapRefMap", "true")
-                property("mixin.env.refMapRemappingFile", "${projectDir}/build/createSrgToMcp/output.srg")
             }
         }
 
