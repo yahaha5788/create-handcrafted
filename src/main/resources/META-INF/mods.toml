@@ -20,14 +20,9 @@ displayURL="https://github.com/yahaha5788/create-handcrafted"
 
 logoFile="createhandcrafted.png" #optional
 #credits=""
-authors="yahaha, Astro_Gamer" #optional
+authors="${mod_authors}" #optional
 
-description='''Have you ever thought the crafting table was too omnipowerful?
-That a handful of alloy shouldn't become a solid basin in the palm of your hands?
-Create: Handcrafted puts you through the full process to make that part.
-While it will be more work, you will find it all the more powerful in the end.
-Precision, makes perfect.
-'''
+description='''${mod_description}'''
 
 [[dependencies.createhandcrafted]] #optional
     modId="forge" #mandatory
