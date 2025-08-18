@@ -2,8 +2,6 @@ package com.yahaha5788.cfstuff;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -15,8 +13,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
-import com.yahaha5788.cfstuff.listeners.TridentEnchantHandler;
 
 
 @Mod(CFStuff.MODID)
@@ -31,13 +27,11 @@ public class CFStuff
     public CFStuff(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
-
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
-
 
     }
 

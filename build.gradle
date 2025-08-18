@@ -88,11 +88,15 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+
+            property("mixin.env.remapRefMap", "true")
         }
 
         server {
             property 'forge.enabledGameTestNamespaces', mod_id
             args '--nogui'
+
+            property("mixin.env.remapRefMap", "true")
         }
 
         // This run config launches GameTestServer and runs all registered gametests, then exits.
@@ -100,6 +104,7 @@ minecraft {
         // The gametest system is also enabled by default for other run configs under the /test command.
         gameTestServer {
             property 'forge.enabledGameTestNamespaces', mod_id
+            property("mixin.env.remapRefMap", "true")
         }
 
         data {
@@ -108,6 +113,7 @@ minecraft {
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            property("mixin.env.remapRefMap", "true")
         }
     }
 }
@@ -122,6 +128,14 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+mixin {
+    add sourceSets.main, 'META-INF/cfstuff.refmap.json'
+
+    config 'cfstuff.mixins.json'
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
