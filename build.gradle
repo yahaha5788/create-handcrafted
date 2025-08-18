@@ -140,44 +140,29 @@ repositories {
         url = "https://modmaven.dev"
     }
     maven {
-        name = "Modrinth"
         url = "https://api.modrinth.com/maven"
-        content {
-            includeGroup "maven.modrinth"
-        }
     }
 
-    mavenLocal()
 
 //    maven { url "https://www.cursemaven.com" }
 //    maven { url "https://maven.createmod.net" }
 //    maven { url 'https://maven.fabricmc.net' }
 
     maven { url "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
-//    maven {
-//        name = "Sinytra"
-//        url = "https://maven.su5ed.dev/releases"
-//    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-//    implementation "net.mehvahdjukaar:moonlight:1.20-2.16.1k"
-//
-//    runtimeClasspath "org.sinytra:connector:<version>"
-//    // Add FFAPI dependency
-//    runtimeOnly "org.sinytra.forgified-fabric-api:forgified-fabric-api:<version>"
-//    // Install desired Fabric mods. Make sure they remain unmapped at runtime
-//    runtimeOnly "some.fabric:mod:<version>"
-//
-//    compileOnly files('fabric/mods/flywheel-fabric-1.20.1-0.6.11-4.jar')
 
     implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
     implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 
-    compileOnly 'uwu.lopyluna.create_bnz:Create-Block-n-Zapping-1.20.1:1.0a.Release'
+    implementation fg.deobf("maven.modrinth:R86Du9H7:1.0a.Release-forge") // bnz
+    implementation fg.deobf("maven.modrinth:aq9qUUQG:2.0.8") // s&a
+    implementation fg.deobf("maven.modrinth:fFEIiSDQ:1.20-3.1.18") // supplementaries
+    implementation fg.deobf("maven.modrinth:twkfQtEc:1.20-2.14.1-forge")
 
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

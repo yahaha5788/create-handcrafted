@@ -5,7 +5,8 @@
   "mixins": [
     "TridentEnchantabilityMixin",
     "IJustLikeThePurpleColorOkay",
-    "BlockZapperMendingMixin"
+    "BlockZapperEnchantabilityMixin",
+    "JetpackAboveTheCloudsMixin"
   ],
   "client": [
 
