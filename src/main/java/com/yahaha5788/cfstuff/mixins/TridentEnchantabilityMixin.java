@@ -9,23 +9,18 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+
 @Mixin(Enchantment.class)
 public class TridentEnchantabilityMixin { // just rolls off the tongue
 
     @Inject(method = "canEnchant", at = @At("HEAD"), cancellable = true)
     public void canEnchant(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+
         if (stack.getItem() == Items.TRIDENT) {
-            System.out.println("trident");
-            if (this.equals(Enchantments.SHARPNESS)) {
-                System.out.println("sharpness");
+            if (this.equals(Enchantments.MOB_LOOTING) || this.equals(Enchantments.SHARPNESS)) {
                 cir.setReturnValue(true);
-                cir.cancel();
-            } else {
-                System.out.println("not sharpness");
-                cir.setReturnValue(false);
                 cir.cancel();
             }
         }
     }
-
 }
