@@ -20,6 +20,10 @@ public class TridentEnchantabilityMixin { // just rolls off the tongue
                 System.out.println("sharpness");
                 cir.setReturnValue(true);
                 cir.cancel();
+            } else {
+                System.out.println("not sharpness");
+                cir.setReturnValue(false);
+                cir.cancel();
             }
         }
     }
