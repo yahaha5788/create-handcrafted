@@ -6,6 +6,10 @@ pluginManagement {
             url = 'https://maven.minecraftforge.net/'
         }
         maven { url = 'https://maven.parchmentmc.org'}
+//        maven {
+//            name = "Sinytra"
+//            url = "https://maven.su5ed.dev/releases"
+//        }
     }
 }
 

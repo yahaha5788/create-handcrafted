@@ -3,7 +3,9 @@
   "package": "com.yahaha5788.cfstuff.mixins",
   "refmap": "cfstuff.refmap.json",
   "mixins": [
-    "TridentEnchantabilityMixin"
+    "TridentEnchantabilityMixin",
+    "IJustLikeThePurpleColorOkay",
+    "BlockZapperMendingMixin"
   ],
   "client": [
 
